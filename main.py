@@ -13,7 +13,7 @@ def DeschideFisier():
 	print nume
 
 def Despre():
-	print "This is a simple example of a menu"
+	print "Descriere descriere descriererererereeree"
 
 meniu = Menu(program)
 program.config(menu=meniu)
