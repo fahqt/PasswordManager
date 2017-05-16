@@ -1,8 +1,27 @@
 from Tkinter import *
 
 #Conectarea la baza de date **TREBUIE GANDIT UN ALGORITM PENTRU STOCAREA NUMELUI SI PAROLEI OFFLINE**
-def Autentificare():
-	print "Nume: " + input1.get() + "\nParola: " + input2.get()
+def Autentificare(parola,user):
+	if parola == str(conectare_baza_date(user)):
+        	print "Felicitari parola este corecta!"
+    	else:
+		print "Parola sau user gresit!"
+
+def conectare_baza_date(user):
+    	import MySQLdb
+
+    	query = "SELECT parola from tabel WHERE nume='"+ user +"'" 
+    	#selecteaza parola userului 'user'
+
+        conn = MySQLdb.connect(host = "localhost", user = "root", passwd = "", db = "parole")
+    	cursor = conn.cursor()
+    	cursor.execute(query)
+    	parola = cursor.fetchone()[0]
+    	#print parola
+    	cursor.close()
+    	conn.close()
+    
+    	return parola
 
 program = Tk()
 
