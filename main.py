@@ -5,6 +5,18 @@ program = Tk()
 
 program.geometry("600x500")
 
+def citire_fisier(parole_manager):
+    	fisier = open(parole_manager , "a+")
+    	text = fisier.read()
+    	file.close()
+    	return text
+    
+def scriere_fisier(parole_manager):
+    	fisier = open(parole_manager , "a+")
+    	text = fisier.write(parole_manager)
+    	file.close()
+   	return text
+
 def FisierNou():
 	print "Fisier Nou"
 
